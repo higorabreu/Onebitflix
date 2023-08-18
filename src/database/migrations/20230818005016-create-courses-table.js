@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('categories', {
+    await queryInterface.createTable('courses', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,9 +13,23 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DataTypes.STRING
       },
-      position: {
+      synopsis: {
         allowNull: false,
-        type: Sequelize.DataTypes.INTEGER
+        type: Sequelize.DataTypes.TEXT
+      },
+      thumbnail_url: {
+        type: Sequelize.DataTypes.STRING
+      },
+      featured: {
+        defaultValue: false,
+        type: Sequelize.DataTypes.BOOLEAN
+      },
+      category_id: {
+        allowNull: false,
+        type: Sequelize.DataTypes.INTEGER,
+        references: { model: 'categories', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT'
       },
       created_at: {
         allowNull: false,
@@ -29,6 +43,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-   await queryInterface.dropTable('categories')
+    await queryInterface.dropTable('courses')
   }
 };
