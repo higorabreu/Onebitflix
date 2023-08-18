@@ -1,6 +1,6 @@
 import uploadFileFeature from "@adminjs/upload";
 import { FeatureType, ResourceOptions } from "adminjs";
-import path, { dirname } from "path";
+import path from "path";
 
 export const episodeResourceOptions: ResourceOptions = {
   navigation: 'Catálogo',
