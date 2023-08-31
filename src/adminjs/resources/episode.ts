@@ -21,6 +21,6 @@ export const episodeResourseFeatures: FeatureType[] = [
             key: 'videoUrl',
             file: 'uploadVideo'
         },
-        uploadPath: (record, filename) => `videos/episode-${record.get('courseId')}/${filename}`
+        uploadPath: (record, filename) => `videos/course-${record.get('courseId')}/${filename}`
     })
 ]
