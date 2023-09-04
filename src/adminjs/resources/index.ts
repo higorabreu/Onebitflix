@@ -3,7 +3,6 @@ import { Category, Course, Episode, User } from "../../models";
 import { categoryResourceOptions } from "./category";
 import { courseResourceOptions, courseResourseFeatures } from "./course";
 import { episodeResourceOptions, episodeResourseFeatures } from "./episode";
-import { features } from "process";
 import { userResourceOptions } from "./user";
 
 export const adminJsResources: ResourceWithOptions[] = [
