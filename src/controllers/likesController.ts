@@ -1,16 +1,16 @@
 import { Response } from "express";
 import { AuthenticatedRequest } from "../middlewares/auth";
-import { favoriteService } from "../services/favoriteService";
+import { likeService } from "../services/likeService";
 
-export const favoritesController = {
-    // POST /favorites
+export const likesController = {
+    // POST /likes
     save: async (req: AuthenticatedRequest, res: Response) => {
         const userId = req.user!.id
         const { courseId } = req.body
 
         try {
-            const favorite = await favoriteService.create(userId, Number(courseId))
-            return res.status(201).json(favorite)
+            const like = await likeService.create(userId, Number(courseId))
+            return res.status(201).json(like)
         } catch (err) {
             if (err instanceof Error) {
                 return res.status(400).json({ message: err.message })       
@@ -18,26 +18,13 @@ export const favoritesController = {
         }
     },
 
-    // GET /favorites
-    index: async (req: AuthenticatedRequest, res: Response) => {
-        const userId = req.user!.id
-        try {
-            const favorites = await favoriteService.findByUserId(userId)
-            return res.json(favorites)
-        } catch (err) {
-            if (err instanceof Error) {
-                return res.status(400).json({ message: err.message })       
-            }
-        }
-    },
-
-    // DELETE /favorites/:id
+    // DELETE /likes/:id
     delete: async (req: AuthenticatedRequest, res: Response) => {
         const userId = req.user!.id
         const courseId = req.params.id
 
         try {
-            await favoriteService.delete(userId, Number(courseId))
+            await likeService.delete(userId, Number(courseId))
             return res.status(204).send()
         } catch (err) {
             if (err instanceof Error) {
