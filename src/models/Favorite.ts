@@ -28,6 +28,6 @@ export const Favorite = sequelize.define<FavoriteInstance, Favorite>('Favorite',
     type: DataTypes.INTEGER,
     references: { model: 'courses', key: 'id' },
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT'
+    onDelete: 'CASCADE'
   }
 })

@@ -2,6 +2,7 @@ import { Response } from "express";
 import fs from "fs";
 import path from "path";
 import { WatchTime } from "../models";
+import { WatchTimeAttributes } from "../models/WatchTime";
 
 export const episodeService = {
     streamEpisodeToResponse: (res: Response, videoUrl: string, range: string | undefined) => {

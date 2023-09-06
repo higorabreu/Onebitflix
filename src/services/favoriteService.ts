@@ -1,15 +1,6 @@
 import { Favorite } from "../models"
 
 export const favoriteService = {
-    create: async (userId: number, courseId: number) => {
-        const favorite = Favorite.create({
-            courseId,
-            userId
-        })
-
-        return favorite
-    },
-
     findByUserId: async (userId: number) => {
         const favorites = await Favorite.findAll({
             attributes: [['user_id', 'userId']],
@@ -29,6 +20,16 @@ export const favoriteService = {
             courses: favorites.map(favorite => favorite.Course)
         }
     },
+
+    create: async (userId: number, courseId: number) => {
+        const favorite = Favorite.create({
+            courseId,
+            userId
+        })
+
+        return favorite
+    },
+
     delete: async (userId: number, courseId: number) => {
         await Favorite.destroy({
             where: {
@@ -37,6 +38,7 @@ export const favoriteService = {
             }
         })
     },
+    
     isFavorited: async (userId: number, courseId: number) => {
         const like = await Favorite.findOne({
             where: {
