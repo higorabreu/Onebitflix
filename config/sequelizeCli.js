@@ -4,7 +4,7 @@ module.exports = {
         host: 'localhost',
         port: '5432',
         database: 'streaming_development',
-        username: 'postgres',
-        password: 'postgres'
+        username: 'streaming',
+        password: 'streaming'
     }
 }
