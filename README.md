@@ -69,6 +69,6 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your mach
 
 You can use the provided Postman collection to test the endpoints of the streaming API.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)]([https://elements.getpostman.com/redirect?entityId=28919232-627263f4-bafb-4d5b-82be-e6ba8e41e686&entityType=collection](https://www.postman.com/dark-robot-470395/workspace/higor-abreu/collection/28919232-627263f4-bafb-4d5b-82be-e6ba8e41e686?action=share&creator=28919232))
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-robot-470395/workspace/higor-abreu/collection/28919232-627263f4-bafb-4d5b-82be-e6ba8e41e686?action=share&creator=28919232)
 
 Click the button above to import the collection into your Postman application.
